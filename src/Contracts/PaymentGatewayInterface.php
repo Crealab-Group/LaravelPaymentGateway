@@ -2,7 +2,7 @@
 
 namespace Crealab\PaymentGateway\Contracts;
 
-use Crealab\PaymentGateways\Payment;
+use Crealab\PaymentGateway\Payment;
 
 interface PaymentGatewayInterface{
     public function charge(Payment $payment);
