@@ -2,9 +2,9 @@
 
 namespace Crealab\PaymentGateway;
 
-use Crealab\PaymentGateways\Contracts\PaymentInterface;
-use Crealab\PaymentGateways\Models\PaymentModel;
-use Crealab\PaymentGateways\Models\GatewayPayment;
+use Crealab\PaymentGateway\Contracts\PaymentInterface;
+use Crealab\PaymentGateway\Models\PaymentModel;
+use Crealab\PaymentGateway\Models\GatewayPayment;
 
 class Payment implements PaymentInterface{
 
