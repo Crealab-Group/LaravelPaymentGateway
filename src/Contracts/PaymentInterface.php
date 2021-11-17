@@ -2,7 +2,7 @@
 
 namespace Crealab\PaymentGateway\Contracts;
 
-use Crealab\PaymentGateways\Models\GatewayPayment;
+use Crealab\PaymentGateway\Models\GatewayPayment;
 
 interface PaymentInterface{
     public function beforeProcess(GatewayPayment $transaction);
