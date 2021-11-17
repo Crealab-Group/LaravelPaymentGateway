@@ -2,8 +2,8 @@
 
 namespace DummyNamespace;
 
-use Crealab\PaymentGateways\Payment;
-use Crealab\PaymentGateways\Gateways\WebpayPlusGateway;
+use Crealab\WebpayPlusPaymentGateway\WebpayPlusGateway;
+use Crealab\PaymentGateway\Payment;
 
 class DummyPayment extends Payment {
 
