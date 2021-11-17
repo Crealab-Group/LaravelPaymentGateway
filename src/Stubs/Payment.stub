@@ -1,0 +1,21 @@
+<?php
+
+namespace DummyNamespace;
+
+use Crealab\PaymentGateways\Payment;
+use Crealab\PaymentGateways\Gateways\WebpayPlusGateway;
+
+class DummyPayment extends Payment {
+
+    public function beforeProcess($payment){
+        return;
+    }
+
+    public function afterProcess($payment){
+        return;
+    }
+
+    public function via(){
+        return WebpayPlusGateway::class;
+    }
+}
