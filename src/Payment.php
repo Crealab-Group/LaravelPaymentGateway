@@ -6,18 +6,20 @@ use Crealab\PaymentGateway\Contracts\PaymentInterface;
 use Crealab\PaymentGateway\Models\PaymentModel;
 use Crealab\PaymentGateway\Models\GatewayPayment;
 
-class Payment implements PaymentInterface{
+abstract class Payment implements PaymentInterface{
 
     public int $amount;
     public int $discount;
     public int $feesNumber;
     public int $feeAmount;
+    public $detail;
 
-    public function __construct(int $amount, int $feesNumber = 1, int $discount = 0, int $feeAmount = 0)
+    public function __construct(int $amount, int $feesNumber = 1, int $discount = 0, int $feeAmount = 0, $detail = null)
     {
         $this->amount = $amount;
         $this->feesNumber = $feesNumber;
         $this->discount = $discount;
+        $this->detail = $detail;
         $this->feeAmount = $this->calcFeeAmount($feeAmount);
     }
 
@@ -36,26 +38,21 @@ class Payment implements PaymentInterface{
      *
      * @return mixed
      */
-    public function beforeProcess(GatewayPayment $payment){
-        return;
-    }
+    abstract public function beforeProcess(GatewayPayment $payment);
 
     /**
      * Función para ser sobreescrita en la creación de un pago
      *
      *  @return mixed
      */
-    public function afterProcess(GatewayPayment $payment){
-        return;
-    }
+    abstract public function afterProcess(GatewayPayment $payment);
+
     /**
      * Función para ser sobreescrita en la creación de un pago
      *
-     * @return mixed null|PaymentGateway
+     * @return PaymentGateway
      */
-    public function via(){
-        return null;
-    }
+    abstract public function via();
 
     public function process(){
         if(is_null($this->via())){
