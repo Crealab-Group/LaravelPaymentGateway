@@ -23,7 +23,7 @@ interface PaymentGatewayInterface{
      * 
      * @return \Crealab\PaymentGateway\Models\PaymentModel
      */
-    public function findPayment():PaymentModel;
+    public function findPayment($uid = null):PaymentModel;
 
 
     /**
