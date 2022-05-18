@@ -40,6 +40,10 @@ class PaymentModel extends Model {
         $this->save();
     }
 
+    public function implementation(){
+        return $this->morphTo();
+    }
+
     public function recreatePayment(){
         $className = $this->payment_class;
         return new $className($this->amount, $this->fees_number , $this->discount , $this->fee_amount );

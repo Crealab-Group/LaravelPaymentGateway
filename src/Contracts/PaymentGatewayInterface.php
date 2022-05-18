@@ -3,13 +3,14 @@
 namespace Crealab\PaymentGateway\Contracts;
 
 use Crealab\PaymentGateway\Payment;
+use Crealab\PaymentGateway\Models\PaymentModel;
 
 interface PaymentGatewayInterface{
 
     /**
      * Process a payment on the selected Gateway
      * 
-     * @param Payment $payment
+     * @param \Crealab\PaymentGateway\Payment $payment
      * 
      * @return void
      */
@@ -20,9 +21,9 @@ interface PaymentGatewayInterface{
      * 
      * @param string $uid
      * 
-     * @return Payment
+     * @return \Crealab\PaymentGateway\Models\PaymentModel
      */
-    public function findPayment():Payment;
+    public function findPayment():PaymentModel;
 
 
     /**

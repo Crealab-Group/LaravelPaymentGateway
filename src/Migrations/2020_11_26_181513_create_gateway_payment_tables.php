@@ -31,6 +31,7 @@ class CreateGatewayPaymentTables extends Migration
             $table->string('payment_class')->nullable();
             $table->bigInteger('payment_status_id')->unsigned()->default(1);
             $table->foreign('payment_status_id')->references('id')->on('payment_status')->onDelete('CASCADE')->onUpdate('CASCADE');;
+            $table->morphs('implementation');
             $table->timestamps();
         });
 
