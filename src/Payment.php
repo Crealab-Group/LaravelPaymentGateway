@@ -4,7 +4,6 @@ namespace Crealab\PaymentGateway;
 
 use Crealab\PaymentGateway\Contracts\PaymentInterface;
 use Crealab\PaymentGateway\Models\PaymentModel;
-use Crealab\PaymentGateway\Models\GatewayPayment;
 
 abstract class Payment implements PaymentInterface{
 
@@ -38,14 +37,14 @@ abstract class Payment implements PaymentInterface{
      *
      * @return mixed
      */
-    abstract public function beforeProcess(GatewayPayment $payment);
+    abstract public function beforeProcess(PaymentModel $payment);
 
     /**
      * Función para ser sobreescrita en la creación de un pago
      *
      *  @return mixed
      */
-    abstract public function afterProcess(GatewayPayment $payment);
+    abstract public function afterProcess(PaymentModel $payment);
 
     /**
      * Función para ser sobreescrita en la creación de un pago
